@@ -1,5 +1,5 @@
 # Matrices
-Incomplete Java Implementation of Matrices and Matrix Operation. 
+Incomplete Java Implementation of Matrices and Matrix Operations. 
 
 Currently working on and still has some missing features.
 Application currently generates matrices with random entries.
