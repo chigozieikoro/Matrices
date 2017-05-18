@@ -6,9 +6,10 @@ public class MatrixDriver {
 		Matrix b = new Matrix(2,1);
 		System.out.println(a);
 		System.out.println('\n');
-		System.out.println(b);
+		//System.out.println(b);
 		
-		Matrix c = a.multiply(b);
+		//Matrix c = a.multiply(b);
+		int c = a.determinant();
 		System.out.println('\n');
 		System.out.println(c);
 	}

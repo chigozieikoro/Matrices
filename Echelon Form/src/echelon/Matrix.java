@@ -89,6 +89,62 @@ public class Matrix {
 
 	}
 	
+	public Matrix transpose(){
+		int[][] matrixToSet = new int[col][row];
+		for(int i = 0; i < row; i++){
+			for(int j = 0; j < col; j++){
+				matrixToSet[i][j] = matrix[j][i]; 
+			}
+		}
+		Matrix toReturn = new Matrix(col, row);
+		toReturn.setMatrix(matrixToSet);
+		return toReturn;
+	}
+	
+	
+	public Matrix scaleBy(int scalar){
+		int[][] scaledValues = new int[row][col];
+		for(int i = 0; i < row; i++){
+			for(int j = 0; j < col; j++){
+				int currValue = matrix[i][j];
+				currValue = currValue * scalar;
+				scaledValues[i][j] = currValue;
+			}
+		}
+		Matrix toReturn = new Matrix(row, col);
+		toReturn.setMatrix(scaledValues);
+		return toReturn;
+	}
+	
+	public int determinant(){
+		if(col != row){
+			throw new IllegalStateException("Matrix is not n x n. Cannot compute determinant");
+		}
+		else{
+			return this.determinantHelper(0);
+		}
+		
+	}
+	
+	private int determinantHelper(int initial){
+		//Not finished yet. Need a more reliable algorithm for cofactorization
+		if (col == 1 && row == 1){
+			return this.matrix[0][0];
+		}
+		else if(col == 2 && row == 2){
+			return this.matrix[0][0] * this.matrix[1][1] - (this.matrix[1][0] * this.matrix[0][1]);
+		}
+		else{
+			int scalar = matrix[0][0];
+			initial++;
+			if(initial % 2 == 0){
+				return scalar;
+			}
+			return 0;
+		}
+		
+	}
+	
 	public String toString(){
 		String s = "";
 		for(int i = 0; i < matrix.length; i++){
@@ -110,6 +166,13 @@ public class Matrix {
 	
 	public int[][] getMatrix(){
 		return matrix;
+	}
+	
+	public void setMatrix(int[][] matrixToSet){
+		if(matrixToSet.length != row || matrixToSet[0].length != col){
+			throw new IllegalStateException("Matrix of invalid size being added");
+		}
+		this.matrix = matrixToSet;
 	}
 
 }
