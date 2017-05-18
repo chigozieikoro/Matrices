@@ -10,14 +10,19 @@ CURRENT FEATURES
 - Matrix Addition
 - Matrix Subtraction
 - Matrix Multiplication
+- Matrix Transpose
+- Matrix Scaling
+- Determinants for 2 x 2 matrices
 
 
 
 FEATURES TO ADD
 - Echelon and Reduced Echelon Form Tools (HIGHEST PRIORITY)
-- Matrix Transpose
 - Determinant for n x n matrices
-- Matrix Scaling
 
 
 CURRENT FEATURES will be updated as features are created and tested.
+
+5/18/17 Update:
+
+Added in Functionality for Transpose and Scaling. Basic 2 x 2 determinants are possible, but not yet possible for arbitrary n x n matrix.
