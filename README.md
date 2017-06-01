@@ -11,7 +11,7 @@ CURRENT FEATURES
 - Matrix Subtraction
 - Matrix Multiplication
 - Matrix Transpose
-- Matrix Scaling
+- Matrix Scaling by Integers
 - Determinants for 2 x 2 matrices
 
 
